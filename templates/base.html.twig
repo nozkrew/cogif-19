@@ -7,7 +7,7 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-        <title>{% block title %}Bienvenue !{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% if app.environment != 'dev' %}
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158618403-2"></script>
@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{{ path('app_main_random') }}"><i class="fas fa-random"></i> Aléatoire</a>
                     </li>
                 </ul>
-                <a href="{{ path('app_main_add') }}" class="btn btn-primary"><i class="far fa-plus-square"></i> Ajouter un GIF</a>
+                <a href="{{ path('app_main_add') }}" class="btn btn-primary"><i class="far fa-plus-square"></i> J'ajoute un GIF</a>
             </div>
         </nav>
         <div class="container">
