@@ -78,7 +78,7 @@ class MainController extends AbstractController{
                 $em->persist($article);
                 $em->flush();
                 
-                $this->get('session')->getFlashBag()->add("success", "GIF enregistré. Il sera valider le plus rapidement possible");
+                $this->get('session')->getFlashBag()->add("success", "Ton GIF est enregistré. Il sera validé le plus rapidement possible");
                 
                 //S'il souhaite reposter
                 if($form->get('postAndRepost')->isClicked()){
@@ -88,7 +88,7 @@ class MainController extends AbstractController{
                 return $this->redirect($this->generateUrl('app_main_index'));
                 
             } catch (Exception $ex) {
-                //erreur
+                $this->get('session')->getFlashBag()->add("danger", "Oups, petite erreur. Recommence pour voir si ça marche :)");
             }
         }
         

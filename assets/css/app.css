@@ -5,3 +5,8 @@ body {
 .gif-card a{
     color: #212529;
 }
+
+.alert{
+    z-index: 99;
+    margin-left: 35%;
+}
