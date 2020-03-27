@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+    <meta property="og:url"           content="{{ absolute_url(path('app_main_view', {'id':article.id, 'slug':article.slug})) }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{ article.title }}" />
+    <meta property="og:description"   content="{{ article.title }}" />
+    <meta property="og:image"         content="{{ article.content }}" />
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% include 'main/model/article.html.twig' with {'article': article }%}
+{% endblock %}

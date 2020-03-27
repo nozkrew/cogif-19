@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        {% for article in articles %}
+            <div class="col-sm-12">
+                {% include 'main/model/article.html.twig' with {'article': article }%}
+            </div>
+        {% endfor %}
+        <div class="col-sm-6">
+            {% if num > 1 %}
+                <a class="btn btn-primary btn-block" href="{{ path('app_main_index_1', {'num':num-1}) }}"><i class="fas fa-angle-left"></i> Précédent</a>
+            {% endif %}
+        </div>
+        <div class="col-sm-6">
+            {% if next %}
+                <a class="btn btn-primary btn-block" href="{{ path('app_main_index_1', {'num':num+1}) }}">Suivant <i class="fas fa-angle-right"></i></a>
+            {% endif %}
+        </div>
+    </div>
+    
+    
+{% endblock %}

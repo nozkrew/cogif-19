@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <h5 class="card-header">Ajouter un gif</h5>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.title) }}
+                            {{ form_widget(form.title, {'attr':{'class':'form-control', 'placeholder':'Quand ...'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.content) }}
+                            {{ form_widget(form.content, {'attr':{'class':'form-control', 'placeholder':'https://....'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.user.name) }}
+                            {{ form_widget(form.user.name, {'attr':{'class':'form-control', 'placeholder':'Bestah85'}}) }}
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{ form_widget(form.postAndRepost, {'attr':{'class':'btn btn-primary btn-block'}}) }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form_widget(form.post, {'attr':{'class':'btn btn-default btn-block'}}) }}
+                            </div>
+                        </div>
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                  {#<h5 class="card-title">Special title treatment</h5>#}
+                  {#<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>#}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

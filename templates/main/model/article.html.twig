@@ -1,0 +1,12 @@
+<div class="card m-2 gif-card">
+  <div class="card-body">
+    <h3 class="card-title"><a href="{{ path('app_main_view', {'id':article.id, 'slug':article.slug}) }}"> {{ article.title }}</a></h3>
+    <h6 class="card-subtitle mb-2 text-muted">Par {{ article.user.name }}</h6>
+    <img src="{{ article.content }}" alt="{{ article.title }}" class="mt-3 img-fluid rounded mx-auto d-block" style="min-width: 300px;"/>
+    <div class='text-center mt-3'>
+        <div class="fb-share-button" data-href="{{ absolute_url(path('app_main_view', {'id':article.id, 'slug':article.slug})) }}" data-layout="button" data-size="large">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgiphy.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
+        </div>
+    </div>
+  </div>
+</div>

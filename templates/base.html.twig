@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block meta %}{% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+            <a class="navbar-brand" href="{{ path('app_main_index') }}">Confinement</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_main_random') }}"><i class="fas fa-random"></i> Aléatoire</a>
+                    </li>
+                </ul>
+                <a href="{{ path('app_main_add') }}" class="btn btn-primary"><i class="far fa-plus-square"></i> Ajouter un GIF</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row mb-5">
+                <div class='col-sm-12'>
+                    <h2>Confiné n'est pas joué</h2>
+                </div>
+                <div class="col-md-9">
+            
+                    {% block body %}{% endblock %}
+                </div>
+                <div class="col-md-3">
+            
+                    <div class="card mt-2">
+                        <div class="card-body">
+                          <h5 class="card-title">Comment trouver un GIF ?</h5>
+                          <h6 class="card-subtitle mb-2 text-muted"><a href="https://giphy.com/" target="_blank">Fais un tour sur Giphy</a></h6>
+                          <p class="card-text">Trouves le GIF parfait à l'aide du champs de recherche</p>
+                          <p class="card-text">Cliques sur <b>Copy link</b></p>
+                          <img src="{{ asset('build/images/copier-gif.png') }}" class="img-fluid" alt="Etape 1 pour copier GIF">
+                          <p class="card-text">Copie le lien qui se trouve dans <b>GIF Link</b></p>
+                          <img src="{{ asset('build/images/copier-gif-2.png') }}" class="img-fluid" alt="Etape 2 pour copier GIF">
+                          <a href="{{ path('app_main_add') }}" class="btn btn-primary btn-block mt-2">J'ajoute un GIF !</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>
