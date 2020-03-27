@@ -8,17 +8,17 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
         <title>{% block title %}{% endblock %}</title>
-        {% if app.environment != 'dev' %}
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158618403-2"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158618403-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-              gtag('config', 'UA-158618403-2');
+            gtag('config', 'UA-158618403-2');
         </script>
-        {% endif %}
+        
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
