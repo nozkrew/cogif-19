@@ -41,6 +41,10 @@ class Article
      * @ORM\Column(type="string", length=1000)
      */
     private $content;
+    
+    public function __toString() {
+        return $this->title;
+    }
 
     public function getId(): ?int
     {

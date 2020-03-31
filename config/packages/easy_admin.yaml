@@ -1,0 +1,20 @@
+easy_admin:
+    site_name: Cogif-19
+
+    design:
+        menu:
+            - { route: 'app_main_index', label: 'Retour au site', icon: 'home' }
+            - { entity: 'Article', label: 'Articles', icon: 'map-marker' }
+            - { entity: 'User', label: 'Auteur', icon: 'user' }
+    entities:
+        Article:
+            class: App\Entity\Article
+            list:
+                fields:
+                  - title
+                  - content
+                  - valid
+                  - user
+                sort: ['valid', 'ASC']
+        User:
+            class: App\Entity\User
